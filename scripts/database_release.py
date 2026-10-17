@@ -323,7 +323,7 @@ def gh(*args, payload=None, timeout=120):
     return json.loads(result.stdout) if result.stdout.strip().startswith(('{', '[')) else result.stdout.strip()
 
 
-def upload(path, repo, tag, workers=3):
+def upload(path, repo, tag, workers=3, stage_only=False):
     path = Path(path).resolve()
     manifest = load_manifest(path)
     proof = json.loads((path.parent / 'verified.json').read_text(encoding='utf-8'))
@@ -372,8 +372,9 @@ def upload(path, repo, tag, workers=3):
             raise ValueError(f'Upload could not be verified: {file.name}')
 
     assets = [part for package in manifest['packages'] for part in package['parts']]
-    for file in (path, path.parent / 'RESTORE.md', path.parent / 'database_release.py'):
-        assets.append({'name': file.name, 'bytes': file.stat().st_size, 'sha256': digest(file)})
+    if not stage_only:
+        for file in (path, path.parent / 'RESTORE.md', path.parent / 'database_release.py'):
+            assets.append({'name': file.name, 'bytes': file.stat().st_size, 'sha256': digest(file)})
     with ThreadPoolExecutor(max_workers=workers) as pool:
         tasks = [pool.submit(send, record) for record in assets]
         for task in as_completed(tasks):
@@ -384,6 +385,9 @@ def upload(path, repo, tag, workers=3):
         asset = inventory.get(record['name'], {})
         if asset.get('state') != 'uploaded' or asset.get('size') != record['bytes'] or asset.get('digest') != 'sha256:' + record['sha256']:
             raise ValueError(f'Final server checksum mismatch: {record["name"]}')
+    if stage_only:
+        log(f'Staged and verified {len(assets)} parts; release remains a draft.')
+        return
     gh('api', '-X', 'PATCH', f'repos/{repo}/releases/{release_id}', '--input', '-',
        payload={'draft': False, 'prerelease': True, 'make_latest': 'false'})
     log(f'Published and verified {len(assets)} assets: https://github.com/{repo}/releases/tag/{tag}')
@@ -406,11 +410,12 @@ def main():
             p.add_argument('--repo', required=True)
             p.add_argument('--tag', required=True)
             p.add_argument('--workers', type=int, default=3)
+            p.add_argument('--stage-only', action='store_true', help='Upload only verified parts; do not publish')
     args = parser.parse_args()
     if args.command == 'prepare':
         prepare(args.root, args.output, args.part_mib)
     elif args.command == 'upload':
-        upload(args.manifest, args.repo, args.tag, args.workers)
+        upload(args.manifest, args.repo, args.tag, args.workers, args.stage_only)
     else:
         verify(args.manifest, getattr(args, 'destination', None), getattr(args, 'packages', None))
 
