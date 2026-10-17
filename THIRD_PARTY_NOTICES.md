@@ -21,5 +21,7 @@ bookkeeping, not a substitute for those permissions.
 The built-in demo contains fictional titles and purpose-written sample notes. It
 does not represent actual shows, people, or community comments.
 
-No project-wide open-source license has been selected yet. This acknowledgement
-does not license Mikirin under Pi's license.
+Mikirin's original source code is licensed under the MIT License; see [LICENSE](LICENSE).
+That license does not relicense third-party datasets, community comments, or other
+source material distributed separately. Their original terms and attribution
+requirements remain applicable.

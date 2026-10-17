@@ -28,7 +28,7 @@ import zipfile
 
 
 ROOT_FILES = frozenset({
-    "README.md", "pyproject.toml", "THIRD_PARTY_NOTICES.md",
+    "README.md", "pyproject.toml", "THIRD_PARTY_NOTICES.md", "LICENSE",
     ".env.example", ".gitignore", "run.ps1",
 })
 TREE_SUFFIXES = {

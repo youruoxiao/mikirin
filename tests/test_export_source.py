@@ -45,7 +45,7 @@ class ExportSourceTests(unittest.TestCase):
 
     def test_exact_allowlist_and_secret_exclusion(self) -> None:
         allowed = {
-            "README.md", "pyproject.toml", "THIRD_PARTY_NOTICES.md", ".env.example",
+            "README.md", "pyproject.toml", "THIRD_PARTY_NOTICES.md", "LICENSE", ".env.example",
             ".gitignore", "run.ps1", "src/mikirin/__init__.py", "src/mikirin/cache.py",
             "src/mikirin/nested/module.py", "src/mikirin/prompts/system.md",
             "tests/test_example.py", "tests/nested/test_more.py", "scripts/export_source.py",
