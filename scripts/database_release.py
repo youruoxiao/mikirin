@@ -389,7 +389,8 @@ def upload(path, repo, tag, workers=3, stage_only=False):
         log(f'Staged and verified {len(assets)} parts; release remains a draft.')
         return
     gh('api', '-X', 'PATCH', f'repos/{repo}/releases/{release_id}', '--input', '-',
-       payload={'draft': False, 'prerelease': True, 'make_latest': 'false'})
+       payload={'tag_name': tag, 'target_commitish': release.get('target_commitish', 'main'),
+                'draft': False, 'prerelease': True, 'make_latest': 'false'})
     log(f'Published and verified {len(assets)} assets: https://github.com/{repo}/releases/tag/{tag}')
 
 

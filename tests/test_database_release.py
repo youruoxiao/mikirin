@@ -119,6 +119,9 @@ class DatabaseReleaseTests(unittest.TestCase):
         with patch.object(release, 'gh', side_effect=remote):
             release.upload(manifest, 'owner/repo', 'test')
         self.assertEqual(sum(args[1:3] == ('-X', 'PATCH') for args, _ in calls), 1)
+        published = next(kwargs['payload'] for args, kwargs in calls if args[1:3] == ('-X', 'PATCH'))
+        self.assertEqual(published['tag_name'], 'test')
+        self.assertFalse(published['draft'])
         calls.clear()
         with patch.object(release, 'gh', side_effect=remote):
             release.upload(manifest, 'owner/repo', 'test', stage_only=True)

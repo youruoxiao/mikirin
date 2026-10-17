@@ -27,7 +27,7 @@
   超额是否计费或被阻断取决于预算设置。整库多版本会重复占用存储，不作为本项目首选。
 - 采用 GitHub Releases 附件：单附件必须小于 2 GiB，单 release 最多 1000 个附件。
   官方文档目前未设置 release 总体积或下载带宽上限；这不免除平台条款及数据权利要求。
-- 压缩后按 1900 MiB 分卷，避免触及单附件边界。一个数据版本对应一个 release，
+- 实际上传采用 Python 标准库 gzip+tar、256 MiB 小分卷，方便断线重试且远低于单附件边界。一个数据版本对应一个 release，
   附带每卷 SHA-256、整体原文件 SHA-256、构建状态及恢复说明。
 
 依据：[Releases 限制](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)、
@@ -59,22 +59,24 @@
 
 ## 实施顺序
 
-1. 先确定公开数据范围或私有备份目标；当前只发布源码。
+1. 先确定公开数据范围或私有备份目标。本次选择正式 A3.6 库、匹配向量和独立的 P1 备份，保留社区原文；排除个人数据和构建缓存。
 2. 停止目标库写入，或使用 SQLite backup API 创建一致快照；不能直接忽略 WAL 复制正在写入的主文件。
    在快照上执行完整性检查，并记录所有 build 状态、schema、来源和许可信息。
 3. 运行包同时携带准确的内容库文件名、`db/current.json`、向量 bundle 和对应的向量 `current.json`。
    不把未通过验收的 P1 库替换为默认库。纯备份若保留 P1，明确标记为未完成构建。
-4. 对批准分发的快照压缩分卷。例如安装 7-Zip 后对暂存的运行包目录执行：
+4. 使用仓库提供的快照、压缩、校验工具（当前明确选择 A3.6、P1 与匹配向量）：
 
    ```powershell
-   7z a -t7z -mx=3 -mmt=on -v1900m <输出目录>/runtime.7z <批准的暂存目录>
+   python scripts/database_release.py prepare --root . --output dist/data-release-new --part-mib 256
+   python scripts/database_release.py verify dist/data-release-new/manifest.json
    ```
 
-   本机调查时未发现可直接使用的 7-Zip 命令，尚未运行这一步。
-5. 生成逐卷及原文件 SHA-256。先在新目录完整解压，核对哈希、SQLite 完整性、发布指针和向量指纹。
+   无需安装 7-Zip；三个包独立压缩。恢复工具只写全新目录，支持仅选正式库和向量，不必下载 P1 备份。
+5. 生成逐卷及原文件 SHA-256。对一致快照执行完整 SQLite 检查，对压缩包完整流式解压并逐文件校验哈希，
+   核对发布指针与向量指纹；发布端不必为验证再落地一份几十 GB 的副本。恢复端只向全新目录写入。
 6. 创建草稿数据 release，逐卷上传；中断后检查服务器资产大小和 digest，跳过已核对相同的附件，
    不盲目覆盖已有附件。全部上传并校验完成后才发布。
-7. 下载者收齐全部分卷，检查校验和，从 `.001` 解压到新工作目录，核验后启动。
+7. 下载者收齐所选包的全部分卷和 `manifest.json`、`database_release.py`，执行 `restore` 恢复到新工作目录，核验后启动。
    不覆盖已有 `user.db`，也不自动覆盖用户现有的正式知识库。
 
 源码仓库与数据库 release 可独立迭代；不为一次数据更新重新上传所有历史数据库。
