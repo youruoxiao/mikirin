@@ -94,4 +94,4 @@ python scripts/export_source.py
 
 最后一条生成 `dist/mikirin-source.zip`，只收录代码、测试和文档，排除 `.env`、本地数据库、评论数据、向量文件及 Git 历史。可以解压后创建一个新仓库上传到 GitHub。开发仓库的旧历史曾包含生成数据，不能靠补一条 `.gitignore` 就把它们从历史里抹掉。
 
-CI 会在 Windows / Linux 上跑测试，并检查 wheel 安装。数据源有各自的使用和再分发限制，参见 [第三方说明](THIRD_PARTY_NOTICES.md)。源码目前还没选定开源许可证；公开仓库不等于给第三方数据或代码额外授权。
+附带的 CI 配置在 Windows / Linux 上跑测试，并检查 wheel 安装；向 GitHub 写入该配置需要登录凭据具备 `workflow` 权限。数据源有各自的使用和再分发限制，参见 [第三方说明](THIRD_PARTY_NOTICES.md)。源码目前还没选定开源许可证；公开仓库不等于给第三方数据或代码额外授权。
