@@ -49,6 +49,16 @@ class DatabaseReleaseTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Archived file checksum'):
             release.verify(manifest)
 
+    def test_restore_can_omit_undownloaded_backup_package(self):
+        source, manifest, package = self.package()
+        other = {'name': 'backup', 'parts': [{'name': 'missing.part', 'bytes': 1, 'sha256': '0'*64}],
+                 'files': [{'path': 'db/backup.db', 'bytes': 1, 'sha256': '0'*64}]}
+        release.save_json(manifest, {'format': release.FORMAT, 'packages': [package, other]})
+        target = self.root / 'runtime-only'
+        release.verify(manifest, target, ['tiny'])
+        self.assertEqual(source.read_bytes(), (target / 'db/content.db').read_bytes())
+        self.assertFalse((target / 'db/backup.db').exists())
+
     def test_no_overwrite_of_existing_parts(self):
         source, _, _ = self.package()
         with self.assertRaises(FileExistsError):
@@ -109,6 +119,10 @@ class DatabaseReleaseTests(unittest.TestCase):
         with patch.object(release, 'gh', side_effect=remote):
             release.upload(manifest, 'owner/repo', 'test')
         self.assertEqual(sum(args[1:3] == ('-X', 'PATCH') for args, _ in calls), 1)
+        calls.clear()
+        with patch.object(release, 'gh', side_effect=remote):
+            release.upload(manifest, 'owner/repo', 'test', stage_only=True)
+        self.assertFalse(any(args[1:3] == ('-X', 'PATCH') for args, _ in calls))
         assets[0]['digest'] = 'sha256:' + '0' * 64
         calls.clear()
         with patch.object(release, 'gh', side_effect=remote), self.assertRaisesRegex(ValueError, 'differs'):
