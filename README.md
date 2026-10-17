@@ -72,7 +72,7 @@ mikirin --root ./demo-space tui
 
 数据库不放进 Git 历史。大文件发布方式、当前数据清单和公开前的检查见 [数据库分发方案](docs/DATABASE-DISTRIBUTION.md)。
 
-**数据截止日期：2026-08-01。** 数据包的发布版本日期为 2026-10-18，不代表数据更新到了该日；具体下载与恢复说明见数据 Release。
+**数据截止日期：2026-08-01。** 数据包的发布版本日期为 2026-10-18，不代表数据更新到了该日；下载和恢复步骤见 [数据 Release](https://github.com/youruoxiao/mikirin/releases/tag/data-20261018)。正常使用只需正式内容库和匹配向量（压缩后合计约 6.02 GiB），P1 未完成构建备份为可选下载，不会替换默认库。
 
 ```text
 src/mikirin/       程序、检索、聊天与数据管线
