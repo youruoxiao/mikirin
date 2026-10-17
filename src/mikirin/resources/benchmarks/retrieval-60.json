@@ -1,0 +1,854 @@
+{
+  "version": "retrieval-60-v1-20261014",
+  "schema_version": 1,
+  "status": "unannotated-human-review-required",
+  "description": "60个具体检索问题模板。问题涉及公开作品；不声称当前发布库逐题具备足够证据。gold、annotation和human_review必须由用户据当前库人工填写，缺失保持null。",
+  "annotation_contract": {
+    "source": "human",
+    "annotator": "由实际标注者填写，不得生成",
+    "scope": "subject_entity_ids / episode_entity_ids 为可接受结果ID列表",
+    "citation_labels": "文档ID -> 人工判定是否支持本题的布尔值"
+  },
+  "questions": [
+    {
+      "id": "retrieval-001",
+      "category": "episode_fact",
+      "query": "《孤独摇滚！》第8集的标题是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-002",
+      "category": "episode_fact",
+      "query": "《魔法少女小圆》第3集的标题是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-003",
+      "category": "episode_fact",
+      "query": "《葬送的芙莉莲》第1集的播出日期是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-004",
+      "category": "episode_fact",
+      "query": "《命运石之门》第12集的标题是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-005",
+      "category": "episode_fact",
+      "query": "《紫罗兰永恒花园》第10集的标题是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-006",
+      "category": "episode_fact",
+      "query": "《进击的巨人》第1集的播出日期是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-007",
+      "category": "episode_fact",
+      "query": "《轻音少女》第一季第1集的标题是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-008",
+      "category": "episode_evaluation",
+      "query": "《孤独摇滚！》第8集的Live演出有哪些好评和批评？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-009",
+      "category": "episode_evaluation",
+      "query": "《魔法少女小圆》第3集的剧情转折有哪些不同评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-010",
+      "category": "episode_evaluation",
+      "query": "《紫罗兰永恒花园》第10集的催泪处理有哪些不同评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-011",
+      "category": "episode_evaluation",
+      "query": "《葬送的芙莉莲》第9集的战斗演出有哪些不同评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-012",
+      "category": "episode_evaluation",
+      "query": "《无职转生》第一季第8集的人物处理有什么争议？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-013",
+      "category": "episode_evaluation",
+      "query": "《奇蛋物语》第1集的画面和叙事有哪些评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-014",
+      "category": "episode_evaluation",
+      "query": "《链锯人》第1集的动作演出有哪些不同评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-015",
+      "category": "overall_reception",
+      "query": "《孤独摇滚！》整体口碑如何，评论赞赏和不满的点分别是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-016",
+      "category": "overall_reception",
+      "query": "《葬送的芙莉莲》第一季的叙事节奏口碑如何？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-017",
+      "category": "overall_reception",
+      "query": "《冰菓》的日常推理有哪些好评和批评？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-018",
+      "category": "overall_reception",
+      "query": "《赛博朋克：边缘行者》的结局有哪些不同评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-019",
+      "category": "overall_reception",
+      "query": "《奇巧计程车》的伏笔回收有哪些评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-020",
+      "category": "overall_reception",
+      "query": "《来自深渊》第一季的冒险氛围口碑如何？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-021",
+      "category": "overall_reception",
+      "query": "《比宇宙更远的地方》的人物成长有哪些评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-022",
+      "category": "deep_analysis",
+      "query": "《孤独摇滚！》第8集如何通过舞台演出表现后藤一里的变化？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-023",
+      "category": "deep_analysis",
+      "query": "《冰菓》文化祭篇如何塑造伊原摩耶花？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-024",
+      "category": "deep_analysis",
+      "query": "《少女革命》如何使用决斗场景表达人物关系？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-025",
+      "category": "deep_analysis",
+      "query": "《乒乓》的画风如何服务人物塑造？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-026",
+      "category": "deep_analysis",
+      "query": "《魔法少女小圆》结局中的愿望如何改变叙事结构？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-027",
+      "category": "deep_analysis",
+      "query": "《少女终末旅行》的音乐如何参与末世氛围塑造？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-028",
+      "category": "deep_analysis",
+      "query": "《平家物语》的琵琶视角如何影响历史叙事？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-029",
+      "category": "cross_episode",
+      "query": "《孤独摇滚！》第1集到第8集，后藤一里的舞台表现有哪些变化？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-030",
+      "category": "cross_episode",
+      "query": "《葬送的芙莉莲》前四集如何逐步改变对时间的呈现？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-031",
+      "category": "cross_episode",
+      "query": "《命运石之门》第12集前后的叙事节奏有哪些变化？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-032",
+      "category": "cross_episode",
+      "query": "《吹响！上低音号》第一季前后，黄前久美子的态度如何变化？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-033",
+      "category": "cross_episode",
+      "query": "《魔法少女小圆》第3集前后的氛围有哪些变化？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-034",
+      "category": "cross_episode",
+      "query": "《乒乓》中星野裕从开篇到结尾的心态如何变化？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-035",
+      "category": "controversy",
+      "query": "《链锯人》动画的电影化演出为什么有争议？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-036",
+      "category": "controversy",
+      "query": "《孤独摇滚！》的夸张漫符演出有哪些支持和反对意见？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-037",
+      "category": "controversy",
+      "query": "《新世纪福音战士》TV结局有哪些相互冲突的评价？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-038",
+      "category": "controversy",
+      "query": "《奇蛋物语》结局的争议具体集中在哪些方面？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-039",
+      "category": "controversy",
+      "query": "《凉宫春日的忧郁》漫无止境的八月有哪些赞赏和批评？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-040",
+      "category": "controversy",
+      "query": "《无职转生》主角塑造的争议具体是什么？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-041",
+      "category": "controversy",
+      "query": "《四月是你的谎言》的煽情方式有哪些不同观点？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-042",
+      "category": "slang",
+      "query": "评论里说的“波奇”指《孤独摇滚！》中的哪个角色？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-043",
+      "category": "slang",
+      "query": "动画讨论里的“炮姐”通常指哪个角色，关联哪部作品？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-044",
+      "category": "slang",
+      "query": "动画讨论里的“石头门”指哪部作品？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-045",
+      "category": "slang",
+      "query": "动画讨论里的“小南极”指哪部作品？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-046",
+      "category": "slang",
+      "query": "《幸运星》讨论里的“宅方”指哪个角色？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-047",
+      "category": "slang",
+      "query": "“团长”在《凉宫春日》相关讨论里指谁？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-048",
+      "category": "which_episode",
+      "query": "《孤独摇滚！》中后藤一里弯腰solo的Live是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-049",
+      "category": "which_episode",
+      "query": "《魔法少女小圆》中巴麻美遭遇夏洛特是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-050",
+      "category": "which_episode",
+      "query": "《紫罗兰永恒花园》中母亲为女儿留下多年生日信是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-051",
+      "category": "which_episode",
+      "query": "《轻音少女》第一季第一次学园祭演出是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-052",
+      "category": "which_episode",
+      "query": "《命运石之门》中冈部第一次看到真由理中枪是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-053",
+      "category": "which_episode",
+      "query": "《葬送的芙莉莲》中阿乌拉与芙莉莲对峙是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-054",
+      "category": "which_episode",
+      "query": "《比宇宙更远的地方》中查看母亲电脑邮件是哪一集？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-055",
+      "category": "which_subject",
+      "query": "四个女高中生去南极寻找母亲留下的踪迹，这是哪个番？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-056",
+      "category": "which_subject",
+      "query": "出租车司机卷入失踪少女案件、角色外形是动物，这是哪个番？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-057",
+      "category": "which_subject",
+      "query": "两个少女驾驶履带摩托在末日都市旅行，这是哪个番？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-058",
+      "category": "which_subject",
+      "query": "一名退役女兵替别人写信、逐渐理解感情，这是哪个番？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-059",
+      "category": "which_subject",
+      "query": "长寿精灵在勇者去世后重新理解旅伴，这是哪个番？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    },
+    {
+      "id": "retrieval-060",
+      "category": "which_subject",
+      "query": "社恐吉他手加入女子乐队并在小型Live House演出，这是哪个番？",
+      "focus": null,
+      "gold": {
+        "scope": null,
+        "evidence_document_ids": null,
+        "dissenting_document_ids": null,
+        "citation_labels": null
+      },
+      "annotation": null,
+      "human_review": null
+    }
+  ]
+}

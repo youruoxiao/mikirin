@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.env
+.env.*
+!.env.example
+build/
+dist/
+work/
+
+# Local datasets and generated artifacts
+data/raw/
+data/staging/
+data/rejected/
+data/llm_cache/
+data/manifests/
+data/sessions/
+data/user/
+data/vector_index/
+db/*.db
+db/*.db-*
+db/current.json
+
+# Local scratch (already tracked files remain tracked)
+/scratch/
+/_scratch/
+/.scratch/
+/tmp/
+/temp/
+/*_local.js
+/_generate_briefs.*
+/generate_briefs.ps1
