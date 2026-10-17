@@ -94,6 +94,27 @@ python scripts/check_theme_quality.py data/staging/discussion_maps/maps.jsonl
 如需检查提取结果，应先将对象整理成 JSONL。报告 `quality_report.json` 和
 `rejected_themes.jsonl` 写到输入文件的同级目录，会替换同名报告。
 
+## 内容数据库 Release 工具
+
+`database_release.py` 为当前 A3.6/P1 数据快照提供一致备份、分卷、校验和恢复。
+它只打包显式列出的两份内容库和当前向量 bundle，不会收集 `user.db`、聊天记录、密钥或模型缓存。
+`prepare` 需要大量磁盘空间；`upload` 是显式网络写操作，需要先创建目标草稿 Release。
+
+```powershell
+python scripts/database_release.py prepare --root . --output dist/data-release-new --part-mib 256
+python scripts/database_release.py verify dist/data-release-new/manifest.json
+```
+
+上传目录还需放入该工具副本 `database_release.py` 与对应的 `RESTORE.md`。
+上传逐文件核对 GitHub SHA-256，已有不同附件拒绝覆盖；全部验证成功后才将草稿发布为预发布版。
+下载者可仅恢复正式库和匹配向量：
+
+```powershell
+python database_release.py restore manifest.json --packages runtime-content runtime-vectors --destination ./new-library
+```
+
+目标必须是全新目录。P1 另存为未完成构建备份，不会写入正式发布指针。
+
 ## 离线测试
 
 在仓库根目录运行（PowerShell）：
